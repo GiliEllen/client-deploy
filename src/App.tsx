@@ -8,7 +8,7 @@ let enviorment = "DEV"
 let SERVER_URL: string;
 
 enviorment === "DEV" ? SERVER_URL = "http://localhost:8000" : SERVER_URL = ""
-enviorment === "DEV" ? null : disableReactDevTools()
+disableReactDevTools()
 
 function App() {
   const [check, setCheck] = useState("");
