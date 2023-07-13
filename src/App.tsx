@@ -4,10 +4,10 @@ import "./App.css";
 import axios from "axios";
 import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
-let enviorment = "DEV"
+let enviorment = "PROD"
 let SERVER_URL: string;
 
-enviorment === "DEV" ? SERVER_URL = "http://localhost:8000" : SERVER_URL = ""
+enviorment === "DEV" ? SERVER_URL = "http://localhost:8000" : SERVER_URL = "https://july-deploy-example-backend.onrender.com/"
 disableReactDevTools()
 
 function App() {
