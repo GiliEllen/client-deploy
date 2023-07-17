@@ -13,9 +13,24 @@ disableReactDevTools()
 function App() {
   const [check, setCheck] = useState("");
 
-  const handleClick = async () => {
+  const handleClickM = async () => {
     try {
-      const { data } = await axios.get(`${SERVER_URL}/api/check`);
+      const { data } = await axios.get(`${SERVER_URL}/api/check/mongoose`);
+      if (!data.ok) {
+        throw new Error(data.message);
+      }
+      console.log(data)
+      setCheck(data.check);
+    } catch (error) {
+      // toast
+      // error handling function
+      // mui error handling
+      console.error(error);
+    }
+  };
+  const handleClickSQL = async () => {
+    try {
+      const { data } = await axios.get(`${SERVER_URL}/api/check/sql`);
       if (!data.ok) {
         throw new Error(data.message);
       }
@@ -31,7 +46,8 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={handleClick}>Click to Check</button>
+      <button onClick={handleClickM}>Click to Check mongoose</button>
+      <button onClick={handleClickSQL}>Click to Check mySql</button>
       <p>{check}</p>
     </div>
   );
