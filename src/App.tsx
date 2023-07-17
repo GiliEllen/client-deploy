@@ -19,6 +19,7 @@ function App() {
       if (!data.ok) {
         throw new Error(data.message);
       }
+      console.log(data)
       setCheck(data.check);
     } catch (error) {
       // toast
