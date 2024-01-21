@@ -7,7 +7,7 @@ import "./App.css";
 let enviorment = "PROD"
 let SERVER_URL: string;
 
-enviorment === "DEV" ? SERVER_URL = "http://localhost:8000" : SERVER_URL = "https://july-deploy-example-backend.onrender.com"
+enviorment === "DEV" ? SERVER_URL = "http://localhost:8000" : SERVER_URL = "https://gili-example-back-deploy.onrender.com"
 //This stays here:
 disableReactDevTools()
 //redux disable:
